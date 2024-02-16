@@ -111,8 +111,6 @@ if(!class_exists('wp_file_manager_git')) {
 				$dir = $settings['ELFINDER_GIT_ACCESS_DIRECTORY']; // path
 				chdir( $dir ); 
 				// echo shell_exec('git init');
-				echo shell_exec("git remote add origin https://github.com/gagan-mysense/test-repo.git");
-				echo shell_exec("git branch --set-upstream-to=origin/main main");
 				
 				echo shell_exec('git add .');	
 				echo shell_exec('git status');
@@ -125,9 +123,10 @@ if(!class_exists('wp_file_manager_git')) {
                 if ($check == null) {
 					$check =  shell_exec('git commit -m "'.$message.'"');
                 }
+				echo shell_exec("git remote add origin https://github.com/gagan-mysense/test-repo.git");
+				echo shell_exec("git branch --set-upstream-to=origin/main main");
 				// echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
 				echo shell_exec('git push ');
-				sleep(5);
 				echo "Commit Successfull !! ";
 			} else {
 				echo 'Error! Please save settings first.';
