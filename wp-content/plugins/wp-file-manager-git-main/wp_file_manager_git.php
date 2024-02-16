@@ -123,7 +123,8 @@ if(!class_exists('wp_file_manager_git')) {
                 if ($check == null) {
 					$check =  shell_exec('git commit -m "'.$message.'"');
                 }
-				echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+				// echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+				echo shell_exec('git push ');
 				echo "Commit Successfull !! ";
 			} else {
 				echo 'Error! Please save settings first.';
