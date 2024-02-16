@@ -124,9 +124,9 @@ if(!class_exists('wp_file_manager_git')) {
 					$check =  shell_exec('git commit -m "'.$message.'"');
                 }
 				echo shell_exec("git remote add origin https://github.com/gagan-mysense/test-repo.git");
-				// echo shell_exec("git branch --set-upstream-to=origin/main main");
-				// echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
-				echo shell_exec('git push --set-upstream origin main ');
+				echo shell_exec("git branch --set-upstream-to=origin/main main");
+				echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
+				// echo shell_exec('git push --set-upstream origin main ');
 				echo "Commit Successfull !! ";
 			} else {
 				echo 'Error! Please save settings first.';
