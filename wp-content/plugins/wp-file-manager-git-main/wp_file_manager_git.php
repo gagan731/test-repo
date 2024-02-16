@@ -110,9 +110,11 @@ if(!class_exists('wp_file_manager_git')) {
 				$git_url = 'github.com/'.$username.'/'.$gitreponame;
 				$dir = $settings['ELFINDER_GIT_ACCESS_DIRECTORY']; // path
 				chdir( $dir ); 
-				echo shell_exec('git init');
+				// echo shell_exec('git init');
+				
+				echo shell_exec('git add .');	
 				echo shell_exec('git status');
-				echo shell_exec('git add .');				
+				// exit;			
 				/*echo shell_exec('git config --global user.email "'.$email.'"');
 				echo shell_exec('git commit -m "'.$message.'"');
 				echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');*/
@@ -121,7 +123,7 @@ if(!class_exists('wp_file_manager_git')) {
                 if ($check == null) {
 					$check =  shell_exec('git commit -m "'.$message.'"');
                 }
-				echo shell_exec('git push ');
+				echo shell_exec('git push https://'.$username.':'.$password.'@'.$git_url.' --all');
 				echo "Commit Successfull !! ";
 			} else {
 				echo 'Error! Please save settings first.';
